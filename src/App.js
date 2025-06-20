@@ -7,7 +7,7 @@ function App() {
     heater1: { file: "Heater-1.mp3", name: "heater1", key: "Q" },
     heater2: { file: "Heater-2.mp3", name: "heater2", key: "W" },
     heater3: { file: "Heater-3.mp3", name: "heater3", key: "E" },
-    heater4: { file: "Heater-4.mp3", name: "heater4", key: "A" },
+    heater4: { file: "Heater-4_1.mp3", name: "heater4", key: "A" },
     clap: { file: "Clap.mp3", name: "clap", key: "S" },
     openHH: { file: "Cev_H2.mp3", name: "openHH", key: "D" },
     kick_n_hat: {
@@ -23,7 +23,9 @@ function App() {
     <div className="App">
       <div id="drum-machine">
         <div id="display">
-          <DrumPad audio={audios.kick} />
+          {Object.keys(audios).map((audio) => (
+            <DrumPad audio={audios[audio]} />
+          ))}
         </div>
       </div>
     </div>
