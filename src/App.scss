@@ -1,15 +1,54 @@
+$main-color: #a86523;
+$accent-color: #a16e08;
+$text-color: #fcefcb;
+$background-color: #fad59a;
+
 * {
-  border: 1px solid red;
+  // border: 1px solid red;
+  color: $text-color;
 }
 .App {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: $background-color;
 }
 
 #drum-machine {
-  width: 600px;
-  height: 270px;
+  width: 35rem;
+  height: 17rem;
   display: flex;
+  padding: 0.5rem;
+  background-color: $main-color;
+  border-radius: 1rem;
+  box-shadow: 0.3rem 0.3rem rgba($color: $main-color, $alpha: 0.3);
+}
+
+.drum-pad {
+  width: 4rem;
+  height: 4rem;
+
+  border-radius: 0.3rem;
+  background-color: $accent-color;
+  border: 1px solid rgba($color: $text-color, $alpha: 0.2);
+
+  &:hover {
+    background-color: rgba($color: $accent-color, $alpha: 0.5);
+    border: 2px solid rgba($color: $text-color, $alpha: 0.3);
+  }
+}
+
+#drum-pad-container {
+  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+}
+
+#display {
+  width: 50%;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
 }
