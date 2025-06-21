@@ -3,7 +3,8 @@ import React, { useEffect } from "react";
 const DrumPad = ({ audio, setDisplay }) => {
   const playSound = () => {
     setDisplay(audio.name);
-    new Audio(`${process.env.PUBLIC_URL}/audios/${audio.file}`).play();
+    const naudio = document.getElementById(audio.key);
+    if (naudio) naudio.play();
   };
 
   useEffect(() => {
@@ -20,6 +21,11 @@ const DrumPad = ({ audio, setDisplay }) => {
   return (
     <button className="drum-pad" id={audio.file} onClick={playSound}>
       {audio.key}
+      <audio
+        className="clip"
+        id={audio.key}
+        src={`${process.env.PUBLIC_URL}/audios/${audio.file}`}
+      />
     </button>
   );
 };
