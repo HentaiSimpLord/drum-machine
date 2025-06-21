@@ -1,0 +1,15 @@
+* {
+  border: 1px solid red;
+}
+.App {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#drum-machine {
+  width: 600px;
+  height: 270px;
+  display: flex;
+}
